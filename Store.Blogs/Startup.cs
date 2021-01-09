@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Store.Blogs.Context;
+using Store.Blogs.Interfaces;
+using Store.Blogs.Repository;
 
 namespace Store.Blogs
 {
@@ -27,7 +29,13 @@ namespace Store.Blogs
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BloggingContext>();
-            services.AddControllers();
+
+            services.AddScoped<IPostRepository, PostRepository>();
+
+            services.AddSwaggerGen();
+
+            services.AddControllers()
+                .AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +45,12 @@ namespace Store.Blogs
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseHttpsRedirection();
 
