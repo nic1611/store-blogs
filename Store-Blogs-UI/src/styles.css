@@ -4,9 +4,9 @@
   padding: 0;
 }
 html,
-a{
-    text-decoration: none;
-    color: #f1f1f1;
+a {
+  text-decoration: none;
+  color: #f1f1f1;
 }
 body {
   height: 100%;
@@ -16,4 +16,48 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.sp-toolbar {
+  position: fixed;
+  width: 1vw;
+}
+
+.sp-titulo {
+  width: 100%;
+  padding-top: 100px;
+  padding-left: 15px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+  background: #c2185b;
+}
+
+.sp-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sp-card {
+  margin-top: 50px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sp-card a {
+  width: 40%;
+}
+
+.sp-card a li {
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.sp-card-header {
+}
+
+.sp-card-description {
+  margin: 10px 0;
 }

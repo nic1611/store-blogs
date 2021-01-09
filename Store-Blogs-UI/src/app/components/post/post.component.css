@@ -1,0 +1,14 @@
+.sp-card-post {
+  margin-top: 50px;
+  list-style: none;
+}
+
+.sp-card-post li {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.sp-card-description-post {
+  margin: 20px 0;
+}
