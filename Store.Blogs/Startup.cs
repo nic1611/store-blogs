@@ -34,6 +34,14 @@ namespace Store.Blogs
 
             services.AddSwaggerGen();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder
+                    .AllowAnyOrigin()
+                    .AllowAnyHeader());
+            });
+
             services.AddControllers()
                 .AddNewtonsoftJson();
         }
@@ -55,6 +63,8 @@ namespace Store.Blogs
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseAuthorization();
 

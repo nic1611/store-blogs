@@ -55,9 +55,12 @@ body {
   border-radius: 10px;
 }
 
-.sp-card-header {
-}
-
 .sp-card-description {
   margin: 10px 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .sp-card a {
+    width: 100%;
+  }
 }
