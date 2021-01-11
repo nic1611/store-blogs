@@ -28,8 +28,8 @@ $ ng serve -o
 
 
 ## Tecnologias
-[angular](https://angular.io/)
-[angular material](https://material.angular.io/)
-[aspnet](https://dotnet.microsoft.com/apps/aspnet) 
-[entity framework core](https://docs.microsoft.com/pt-br/ef/core/)
-[sqlite](https://docs.microsoft.com/pt-br/ef/core/)
+* [angular](https://angular.io/)
+* [angular material](https://material.angular.io/)
+* [aspnet](https://dotnet.microsoft.com/apps/aspnet) 
+* [entity framework core](https://docs.microsoft.com/pt-br/ef/core/)
+* [sqlite](https://docs.microsoft.com/pt-br/ef/core/)
