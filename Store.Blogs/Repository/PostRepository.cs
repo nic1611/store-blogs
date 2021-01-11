@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Store.Blogs.Context;
@@ -15,16 +16,15 @@ namespace Store.Blogs.Repository
         {
             _context = context;
         }
-
         public async Task<IList<Blog>> GetAllPosts()
         {
-            var posts = await _context.Blogs
+            var blogs = await _context.Blogs
             .Include(i => i.Posts)
             .ToListAsync();
 
-            posts.ForEach(f => f.Posts.ForEach(e => e.Blog = null));
+            blogs.ForEach(b => b.Posts.ForEach(p => p.Blog = null));
 
-            return posts;
+            return blogs;
         }
 
         public async Task<Post> GetById(int id)
@@ -34,6 +34,7 @@ namespace Store.Blogs.Repository
             .FirstAsync(f => f.PostId == id);
 
             post.Blog.Posts.Clear();
+
             return post;
         }
 

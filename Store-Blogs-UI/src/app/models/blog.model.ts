@@ -1,7 +1,7 @@
 import { Post } from './post.model';
 
-export interface Blog {
+export class Blog {
   blogId: number;
-  url: string;
+  nome: string;
   posts: Post[];
 }

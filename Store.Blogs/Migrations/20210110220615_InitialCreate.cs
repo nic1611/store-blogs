@@ -12,7 +12,7 @@ namespace Store.Blogs.Migrations
                 {
                     BlogId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Url = table.Column<string>(type: "TEXT", nullable: true)
+                    Nome = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

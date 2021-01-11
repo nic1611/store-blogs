@@ -8,7 +8,7 @@ using Store.Blogs.Context;
 namespace Store.Blogs.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    [Migration("20210108224647_InitialCreate")]
+    [Migration("20210110220615_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace Store.Blogs.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Url")
+                    b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
                     b.HasKey("BlogId");

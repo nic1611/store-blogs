@@ -4,23 +4,22 @@
   </div>
   <div class="sp-container">
     <ul class="sp-card">
-      <a [routerLink]="['Post', post.postId]" *ngFor="let post of posts">
-        <li class="mat-elevation-z8">
+      <li class="mat-elevation-z8" *ngFor="let post of posts">
+        <a [routerLink]="['Post', post.postId]">
           <div class="sp-card-header">
             <span>{{ post.title }}</span>
-            <p>Blog: {{ post.blogId }}</p>
           </div>
           <div class="sp-card-description">
             <p>
               {{ post.content }}
             </p>
           </div>
-          <div class="sp-card-buttons">
-            <button mat-button color="accent">Editar</button>
-            <button mat-button color="primary">Deletar</button>
-          </div>
-        </li>
-      </a>
+        </a>
+        <div class="sp-card-buttons">
+          <button mat-button color="accent" (click)="openDialog()">Editar</button>
+          <button mat-button color="primary">Deletar</button>
+        </div>
+      </li>
     </ul>
   </div>
 </div>

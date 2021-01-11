@@ -1,6 +1,6 @@
 import { Blog } from "./blog.model";
 
-export interface Post {
+export class Post {
   postId: number;
   title: string;
   content: string;

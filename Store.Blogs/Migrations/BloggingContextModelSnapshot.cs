@@ -21,7 +21,7 @@ namespace Store.Blogs.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Url")
+                    b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
                     b.HasKey("BlogId");
