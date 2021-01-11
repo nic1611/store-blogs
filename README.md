@@ -12,16 +12,19 @@
 ## Instalação
 ##### Após clonar o repositório digite os comandos: 
 
-> cd Store.Blogs
-> dotnet build
-> dotnet restore
-> dotnet ef migrations add MyFirstMigration
-> dotnet ef database update
-> dotnet run
-
-> cd ../Store-Blogs-UI
-> npm install
-> ng serve -o
+```bash
+$ cd Store.Blogs
+$ dotnet build
+$ dotnet restore
+$ dotnet ef migrations add MyFirstMigration
+$ dotnet ef database update
+$ dotnet run
+```
+```bash
+$ cd ../Store-Blogs-UI
+$ npm install
+$ ng serve -o
+```
 
 
 ## Tecnologias
