@@ -14,6 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 
 import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
@@ -40,6 +41,7 @@ import { CreateEditComponent } from './components/create-edit/create-edit.compon
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
