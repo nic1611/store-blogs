@@ -1,28 +1,33 @@
-<div>
-    <form [formGroup]="formPost" (ngSubmit)="onSubmit()">
-        <mat-form-field class="example-full-width">
-          <mat-label>Favorite food</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
-      <br/>
-      <mat-form-field appearance="fill">
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-          <mat-option  >
-            C#
-          </mat-option>
-          <mat-option  >
-            C#
-          </mat-option>
-          <mat-option  >
-            C#
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br/>      
-        <mat-form-field class="example-full-width">
-          <mat-label>Leave a comment</mat-label>
-          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-        </mat-form-field>
-      </form>
+<div class="sb-dialog">
+  <form [formGroup]="formPost" (ngSubmit)="onSubmit()">
+    <mat-form-field class="sb_input">
+      <mat-label>Título</mat-label>
+      <input
+        matInput
+        id="title"
+        formControlName="title"
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="sb_input">
+      <mat-label>Blog</mat-label>
+      <mat-select id="blogId" formControlName="blogId">
+        <mat-option *ngFor="let blog of listaBlogs" [value]="blog.id">
+          {{ blog.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="sb_input">
+      <mat-label>Escreva seu post...</mat-label>
+      <textarea
+        matInput
+        matTextareaAutosize="true"
+        id="content"
+        formControlName="content"
+      ></textarea>
+    </mat-form-field>
+    <br />
+    <button mat-button color="accent" type="submit">Salvar</button>
+  </form>
 </div>

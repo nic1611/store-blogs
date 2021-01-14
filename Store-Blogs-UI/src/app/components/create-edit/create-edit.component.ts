@@ -11,7 +11,11 @@ import { PostComponent } from '../post/post.component';
 export class CreateEditComponent implements OnInit {
   public formPost: FormGroup;
 
-  listaBlogs: Array<object> = [{}]
+  public listaBlogs: Array<object> = [
+    { nome: 'C#', id: 1 },
+    { nome: 'R', id: 2 },
+    { nome: 'Python', id: 3 },
+  ];
 
   constructor(private formBuilder: FormBuilder) {
     this.createForm(new Post());
