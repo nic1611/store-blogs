@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Post } from 'src/app/models/post.model';
-import { PostComponent } from '../post/post.component';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-create-edit',
@@ -17,8 +18,12 @@ export class CreateEditComponent implements OnInit {
     { nome: 'Python', id: 3 },
   ];
 
-  constructor(private formBuilder: FormBuilder) {
-    this.createForm(new Post());
+  constructor(
+    private formBuilder: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) data: Post,
+    private postService: PostService
+  ) {
+    this.createForm(data);
   }
 
   ngOnInit(): void {}
@@ -35,5 +40,12 @@ export class CreateEditComponent implements OnInit {
   onSubmit() {
     // aqui você pode implementar a logica para fazer seu formulário salvar
     console.log(this.formPost.value);
+
+    if (this.formPost.value.postId == null) {
+      this.formPost.value.postId = 0;
+      this.postService.create(this.formPost.value).subscribe(() => {});
+    } else {
+      this.postService.update(this.formPost.value).subscribe(() =>{});
+    }
   }
 }

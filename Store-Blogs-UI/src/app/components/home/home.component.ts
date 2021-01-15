@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Blog } from 'src/app/models/blog.model';
 import { Post } from 'src/app/models/post.model';
 import { PostService } from 'src/app/services/post.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CreateEditComponent } from '../create-edit/create-edit.component';
 
 @Component({
@@ -23,7 +23,14 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  public openDialog() {
-    this.dialog.open(CreateEditComponent);
+  public openDialog(post?: Post) {
+    if (post == null) {
+      post = new Post();
+    }
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.data = post;
+
+    this.dialog.open(CreateEditComponent, dialogConfig);
   }
 }

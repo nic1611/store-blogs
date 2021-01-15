@@ -1,6 +1,7 @@
 <div>
   <div class="sp-titulo">
     <span>Postagens</span>
+    <button mat-button color="accent" (click)="openDialog()">Novo</button>
   </div>
   <div class="sp-container">
     <ul class="sp-card">
@@ -16,7 +17,7 @@
           </div>
         </a>
         <div class="sp-card-buttons">
-          <button mat-button color="accent" (click)="openDialog()">Editar</button>
+          <button mat-button color="accent" (click)="openDialog(post)">Editar</button>
           <button mat-button color="primary">Deletar</button>
         </div>
       </li>

@@ -18,4 +18,16 @@ export class PostService {
   public getPost(id: number): Observable<Post> {
     return this.http.get<Post>(`${environment.apiUrl}Post/${id}`);
   }
+
+  public create(post: Post): Observable<object> {
+    return this.http.post<Post>(`${environment.apiUrl}Post/Novo`, post);
+  }
+
+  public update(post: Post): Observable<object> {
+    return this.http.put<Post>(`${environment.apiUrl}Post/Editar`, post);
+  }
+
+  public delete(id: number): Observable<object> {
+    return this.http.delete<Post>(`${environment.apiUrl}Post/Remover/${id}`);
+  }
 }
