@@ -32,5 +32,10 @@ export class HomeComponent implements OnInit {
     dialogConfig.data = post;
 
     this.dialog.open(CreateEditComponent, dialogConfig);
+    
+    this.postService.getPosts().subscribe((blogs) => {
+      this.blogs = blogs;
+      blogs.map((e) => e.posts.map((p) => this.posts.push(p)));
+    });
   }
 }

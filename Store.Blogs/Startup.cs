@@ -39,8 +39,8 @@ namespace Store.Blogs
                 options.AddPolicy("AllowSpecificOrigin",
                     builder => builder
                     .AllowAnyOrigin()
-                    .AllowAnyHeader()
-                    .AllowAnyMethod());
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
             });
 
             services.AddControllers()
