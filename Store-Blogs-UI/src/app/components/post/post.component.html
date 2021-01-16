@@ -15,8 +15,12 @@
           </p>
         </div>
         <div class="sp-card-buttons-post">
-          <button mat-button color="accent">Editar</button>
-          <button mat-button color="primary">Deletar</button>
+          <button mat-button color="accent" (click)="openDialog(post)">
+            Editar
+          </button>
+          <button mat-button color="primary" (click)="deletar(post)">
+            Deletar
+          </button>
         </div>
       </li>
     </ul>

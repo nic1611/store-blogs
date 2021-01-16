@@ -8,6 +8,7 @@
 
 ## Imagens
 ![Alt text](/Imagens/Home.PNG?raw=true "Tela de produto")
+![Alt text](/Imagens/Modal.PNG?raw=true "Modal para adicionar novo iten")
 
 ## Instalação
 ##### Após clonar o repositório digite os comandos: 

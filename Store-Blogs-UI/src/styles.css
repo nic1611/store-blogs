@@ -21,6 +21,7 @@ body {
 .sp-toolbar {
   position: fixed;
   width: 1vw;
+  z-index: 999;
 }
 
 .sp-titulo {

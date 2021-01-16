@@ -31,11 +31,24 @@ export class HomeComponent implements OnInit {
 
     dialogConfig.data = post;
 
-    this.dialog.open(CreateEditComponent, dialogConfig);
-    
-    this.postService.getPosts().subscribe((blogs) => {
-      this.blogs = blogs;
-      blogs.map((e) => e.posts.map((p) => this.posts.push(p)));
+    this.dialog
+      .open(CreateEditComponent, dialogConfig)
+      .afterClosed()
+      .subscribe(() => {
+        this.posts = new Array<Post>();
+        this.postService.getPosts().subscribe((blogs) => {
+          this.blogs = blogs;
+          blogs.map((e) => e.posts.map((p) => this.posts.push(p)));
+        });
+      });
+  }
+
+  public deletar(post: Post) {
+    this.postService.delete(post.postId).subscribe(() => {
+      const index = this.posts.indexOf(post, 0);
+      if (index > -1) {
+        this.posts.splice(index, 1);
+      }
     });
   }
 }

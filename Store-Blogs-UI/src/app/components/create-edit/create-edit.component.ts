@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Post } from 'src/app/models/post.model';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -20,6 +20,7 @@ export class CreateEditComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private dialogRef: MatDialogRef<CreateEditComponent>,
     @Inject(MAT_DIALOG_DATA) data: Post,
     private postService: PostService
   ) {
@@ -43,9 +44,13 @@ export class CreateEditComponent implements OnInit {
 
     if (this.formPost.value.postId == null) {
       this.formPost.value.postId = 0;
-      this.postService.create(this.formPost.value).subscribe(() => {});
+      this.postService.create(this.formPost.value).subscribe(() => {
+        this.dialogRef.close();
+      });
     } else {
-      this.postService.update(this.formPost.value).subscribe(() =>{});
+      this.postService.update(this.formPost.value).subscribe(() => {
+        this.dialogRef.close();
+      });
     }
   }
 }
